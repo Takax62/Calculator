@@ -1,25 +1,40 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
     background-color: #f3f4f6;
+    color: #333;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #f3f4f6;
+}
+
+.mode-switch {
+    margin-bottom: 20px;
 }
 
 .clock {
     width: 200px;
     height: 200px;
-    border: 10px solid #333;
+    border: 10px solid currentColor;
     border-radius: 50%;
     position: relative;
-    background-color: #fff;
+    background-color: currentColor;
 }
 
 .hand {
     width: 50%;
     height: 6px;
-    background-color: #333;
+    background-color: currentColor;
     position: absolute;
     top: 50%;
     transform-origin: 100%;
@@ -36,7 +51,7 @@ body {
 
 .second {
     height: 4px;
-    background-color: #d00;
+    background-color: red;
 }
 
 label {
@@ -44,7 +59,6 @@ label {
     width: 20px;
     height: 20px;
     text-align: center;
-    color: #333;
     font-size: 12px;
     transform: rotate(calc(var(--i) * 30deg)) translate(90px) rotate(calc(var(--i) * -30deg));
 }
