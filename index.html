@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analog Clock with Labels</title>
+    <title>Minimal Analog Clock</title>
     <style>
         body {
             display: flex;
@@ -12,33 +12,30 @@
             height: 100vh;
             margin: 0;
             background-color: #f3f4f6;
+            font-family: Arial, sans-serif;
         }
 
         .clock {
+            position: relative;
             width: 200px;
             height: 200px;
-            border: 10px solid #333;
-            border-radius: 50%;
-            position: relative;
-            background-color: #fff;
         }
 
         .hand {
-            width: 50%;
-            height: 4px;
-            background-color: #333;
             position: absolute;
+            width: 50%;
             top: 50%;
             transform-origin: 100%;
             transform: rotate(90deg);
+            background: #333;
         }
 
         .hour {
-            height: 6px;
+            height: 4px;
         }
 
         .minute {
-            height: 4px;
+            height: 3px;
         }
 
         .second {
@@ -51,6 +48,7 @@
             width: 20px;
             height: 20px;
             text-align: center;
+            font-size: 14px;
             transform: rotate(calc(var(--i) * 30deg)) translate(90px) rotate(calc(var(--i) * -30deg));
         }
 
@@ -99,7 +97,6 @@
         }
 
         setInterval(updateClock, 1000);
-
         updateClock();
     </script>
 </body>
